@@ -1,21 +1,28 @@
 package com.example.tmsc.loginapplication.Models;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by tmsc on 17/08/16.
- */
+import io.kimo.lib.faker.component.text.AddressComponent;
+import io.kimo.lib.faker.component.text.LoremComponent;
+import io.kimo.lib.faker.component.text.NameComponent;
+
 public class FeedModel {
 
     private String name;
-    private String photo;
+    private String address;
+    private String photoUri;
 
-    FeedModel(String name, String photo) {
-        this.setName(name);
-        this.setPhoto(photo);
+    private String description;
+
+
+    FeedModel(String name, String address, String photoUri) {
+        setPhotoUri(photoUri);
+        setName(name);
+        setAddress(address);
     }
-
 
     public String getName() {
         return name;
@@ -25,22 +32,58 @@ public class FeedModel {
         this.name = name;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getAddress() {
+        return address;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public static List<FeedModel> getSamples(int capacity) {
-        List<FeedModel> items = new ArrayList<>();
+    public String getPhotoUri() {
+        return photoUri;
+    }
+
+    public void setPhotoUri(String photoUri) {
+        this.photoUri = photoUri;
+    }
+
+    public static ArrayList<FeedModel> getSamples(Context context, int capacity) {
+
+        ArrayList<FeedModel> items = new ArrayList<>();
 
         for (int i = 0; i < capacity; i++) {
-            items.add(new FeedModel("Name : " + i, "Age : " + i));
+            NameComponent name = new NameComponent(context);
+            AddressComponent address = new AddressComponent(context);
+
+            LoremComponent loremComponent = new LoremComponent(context);
+            FeedModel model = new FeedModel(name.fullName(), address.randomText(), "http://i.imgur.com/DvpvklR.png");
+            model.setDescription(loremComponent.paragraphs());
+            items.add(model);
+
         }
 
         return items;
     }
 
+    public static ArrayList<FeedModel> filterByText(List<FeedModel> models, CharSequence text) {
+
+        ArrayList<FeedModel> items = new ArrayList<>();
+
+        for (int i = 0; i < models.size(); i++) {
+            if (models.get(i).getName().toLowerCase().contains(text.toString().toLowerCase())) {
+                items.add(models.get(i));
+            }
+        }
+
+        return items;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

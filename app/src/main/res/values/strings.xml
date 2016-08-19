@@ -17,4 +17,5 @@
     <string name="welcome_title">Welcome to the zoo</string>
     <string name="welcome_subtitle">You are not an animal.\nAre you sure?</string>
     <string name="go">Go</string>
+    <string name="search_placeholder">Rechercher…</string>
 </resources>

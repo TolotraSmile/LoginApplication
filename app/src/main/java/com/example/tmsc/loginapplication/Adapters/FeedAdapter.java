@@ -32,7 +32,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
     @Override
     public void onBindViewHolder(FeedViewHolder holder, int position) {
         holder.personName.setText(feedModels.get(position).getName());
-        holder.personAge.setText(feedModels.get(position).getPhoto());
+        holder.personAge.setText(feedModels.get(position).getAddress());
     }
 
     @Override
@@ -53,7 +53,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedViewHolder
 
         FeedViewHolder(View itemView) {
             super(itemView);
-            cv = (CardView) itemView.findViewById(R.id.feed_item);
             personName = (TextView) itemView.findViewById(R.id.feed_person_name);
             personAge = (TextView) itemView.findViewById(R.id.feed_person_age);
             personPhoto = (ImageView) itemView.findViewById(R.id.feed_person_photo);
