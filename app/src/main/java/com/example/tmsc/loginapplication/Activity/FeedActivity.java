@@ -1,22 +1,18 @@
-package com.example.tmsc.loginapplication;
+package com.example.tmsc.loginapplication.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.tmsc.loginapplication.Adapters.NewFeedAdapter;
-import com.example.tmsc.loginapplication.Models.FeedModel;
+import com.example.tmsc.loginapplication.adapters.NewFeedAdapter;
+import com.example.tmsc.loginapplication.models.FeedModel;
+import com.example.tmsc.loginapplication.R;
 import com.google.gson.Gson;
 
 import org.androidannotations.annotations.AfterViews;
@@ -31,6 +27,8 @@ public class FeedActivity extends Activity {
 
     EditText searchView;
     ArrayList<FeedModel> models;
+
+    Gson gson = new Gson();
 
     @AfterViews
     void init() {
@@ -48,7 +46,6 @@ public class FeedActivity extends Activity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                    Gson gson = new Gson();
                     Intent intent = new Intent(FeedActivity.this, FeedDetailsActivity_.class);
                     intent.putExtra("data", gson.toJson(models.get(position)));
                     startActivity(intent);

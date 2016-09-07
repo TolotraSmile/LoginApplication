@@ -1,4 +1,4 @@
-package com.example.tmsc.loginapplication.Models;
+package com.example.tmsc.loginapplication.models;
 
 /**
  * Created by tmsc on 17/08/16.

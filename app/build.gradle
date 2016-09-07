@@ -6,6 +6,7 @@ repositories {
     maven { url 'http://5.135.82.92:8081/nexus/content/groups/public/' }
 }
 
+
 apply plugin: 'android-apt'
 def AAVersion = '3.1'
 apt {
@@ -50,9 +51,11 @@ android {
         compile 'com.github.thiagokimo:faker:1.4.3'
         compile 'com.google.code.gson:gson:2.7'
         compile 'com.android.support:design:23.1.1'
-        compile 'com.flaviofaria:kenburnsview:1.0.7'
         compile 'com.squareup.picasso:picasso:2.5.2'
         compile 'de.hdodenhof:circleimageview:2.1.0'
+        compile 'com.j256.ormlite:ormlite-core:4.48'
+        compile 'com.j256.ormlite:ormlite-android:4.48'
+
         apt "org.androidannotations:androidannotations:$AAVersion"
         compile "org.androidannotations:androidannotations-api:$AAVersion"
     }

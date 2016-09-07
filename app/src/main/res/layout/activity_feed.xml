@@ -12,7 +12,8 @@
         android:layout_height="@dimen/textfield_height"
         android:background="@color/colorGray"
         android:orientation="horizontal"
-        android:elevation="8dp">
+        android:paddingBottom="1dp"
+        android:elevation="4dp">
 
         <ImageView
             android:layout_width="@dimen/textfield_height"
@@ -27,7 +28,6 @@
             android:background="@color/colorWhite"
             android:hint="@string/search_placeholder" />
     </LinearLayout>
-
 
     <ListView
         android:id="@+id/feed_list"

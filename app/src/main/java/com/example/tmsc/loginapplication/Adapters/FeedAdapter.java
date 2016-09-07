@@ -1,4 +1,4 @@
-package com.example.tmsc.loginapplication.Adapters;
+package com.example.tmsc.loginapplication.adapters;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.tmsc.loginapplication.Models.FeedModel;
+import com.example.tmsc.loginapplication.models.FeedModel;
 import com.example.tmsc.loginapplication.R;
 
 import java.util.List;

@@ -1,8 +1,10 @@
-package com.example.tmsc.loginapplication;
+package com.example.tmsc.loginapplication.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
+
+import com.example.tmsc.loginapplication.R;
 
 import org.androidannotations.annotations.EActivity;
 

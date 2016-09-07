@@ -1,4 +1,4 @@
-package com.example.tmsc.loginapplication.Models;
+package com.example.tmsc.loginapplication.models;
 
 import android.content.Context;
 
@@ -17,8 +17,7 @@ public class FeedModel {
 
     private String description;
 
-
-    FeedModel(String name, String address, String photoUri) {
+    private FeedModel(String name, String address, String photoUri) {
         setPhotoUri(photoUri);
         setName(name);
         setAddress(address);
@@ -36,7 +35,7 @@ public class FeedModel {
         return address;
     }
 
-    public void setAddress(String address) {
+    private void setAddress(String address) {
         this.address = address;
     }
 
@@ -44,7 +43,7 @@ public class FeedModel {
         return photoUri;
     }
 
-    public void setPhotoUri(String photoUri) {
+    private void setPhotoUri(String photoUri) {
         this.photoUri = photoUri;
     }
 
@@ -83,7 +82,7 @@ public class FeedModel {
         return description;
     }
 
-    public void setDescription(String description) {
+    private void setDescription(String description) {
         this.description = description;
     }
 }
